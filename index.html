@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CMAQ* Calculator</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="style.css">
+        <!--[if lt IE 9]>
+       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+       <![endif]-->
+    </head>
+    <body role="document">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">CMAQ* Calculator</a>
+                </div>
+            </div>
+        </div>
+        <div id="loading"></div>
+        <div class="container content" role="main">
+            <div id="calculator" class="page-header">
+                <h1>CMAQ* Calculator</h1>
+                <p>For computing feasibility of intersection projects</p>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="data-entry-heading">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#data-entry" aria-expanded="true" aria-controls="data-entry">
+                                    Data Entry
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="data-entry" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="data-entry-heading">
+                            <div class="panel-body">
+                                <form>
+                                    <fieldset>
+                                        <legend>Existing Configuration</legend>
+                                        <div class="row form-group">
+                                            <div class="col-xs-6 col-sm-3">
+                                                <label for="lanes">Lanes</label>
+                                                <input id="lanes" type="number" class="form-control" placeholder="lanes">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3">
+                                                <label for="signals">Signals</label>
+                                                <input id="signals" type="number" class="form-control" placeholder="signals">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-xs-6 col-sm-3">
+                                                <label for="cars-per-day">Cars per day</label>
+                                                <input id="cars-per-day" type="number" class="form-control" placeholder="cars">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3">
+                                                <label for="buses">Buses per day</label>
+                                                <input id="buses" type="number" class="form-control" placeholder="buses">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3">
+                                                <label for="small-trucks-per-day">Small trucks per day</label>
+                                                <input id="small-trucks-per-day" type="number" class="form-control" placeholder="small trucks">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3">
+                                                <label for="large-trucks-per-day">Large trucks per day</label>
+                                                <input id="large-trucks-per-day" type="number" class="form-control" placeholder="large trucks">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-xs-6 col-sm-3">
+                                                <label for="bikes">Bikes</label>
+                                                <input id="bikes" type="number" class="form-control" placeholder="bikes">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3">
+                                                <label for="pedestrians">Pedestrians</label>
+                                                <input id="pedestrians" type="number" class="form-control" placeholder="pedestrians">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-xs-6">
+                                                <label for="min-speed">Minimum speed</label>
+                                                <input id="min-speed" type="number" class="form-control" placeholder="minimum">
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <label for="max-speed">Maximum speed</label>
+                                                <input id="max-speed" type="number" class="form-control" placeholder="maximum">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Proposed Lane and Signal Increases</legend>
+                                        <div class="row form-group">
+                                            <div class="col-xs-6 col-sm-3">
+                                                <label for="proposed-lanes" data-proposed>Lanes</label>
+                                                <input id="proposed-lanes" type="number" class="form-control" placeholder="lanes">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3">
+                                                <label for="proposed-signals" data-proposed>Signals</label>
+                                                <input id="proposed-signals" type="number" class="form-control" placeholder="signals">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="justify">
+                                        <button id="go" type="button" class="btn btn-default">Calculate</button>
+                                        <button type="reset" class="btn btn-default">Reset</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="results-heading">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#results-display" aria-expanded="true" aria-controls="results-display">
+                                    Results
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="results-display" class="panel-collapse collapse" role="tabpanel" aria-labelledby="results-heading">
+                            <div class="panel-body">
+                                <pre id="calculations">No data</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bike-lane" class="hidden">Bike Lane</div>
+            <div id="bike" class="hidden"></div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="calculator.js"></script>
+    </body>
+</html>
