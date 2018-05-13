@@ -1,3 +1,5 @@
+@import("//fonts.googleapis.com/css?family=Stardos+Stencil");
+
 body {
     background: url('asphalt-tile.jpg') repeat;
     color: #fff;
@@ -75,8 +77,6 @@ legend {
     font-weight: 900;
     line-height: 95px;
     color: red;
-    font-family: "Courier",monospace;
-    font-variant: small-caps;
-    font-style: italic;
     text-shadow: 3px 3px 3px #000;
+    font-family: "Stardos Stencil","Courier",serif;
 }

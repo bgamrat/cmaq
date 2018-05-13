@@ -31,7 +31,7 @@
         <div class="container content" role="main">
             <div id="calculator" class="page-header">
                 <h1>CMAQ* Calculator</h1>
-                <p>For computing feasibility of intersection projects</p>
+                <p>For computing* emissions reductions of lane addition projects</p>
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="data-entry-heading">
@@ -56,22 +56,27 @@
                                                 <input id="signals" type="number" class="form-control" placeholder="signals">
                                             </div>
                                         </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Traffic <small>(per day)</small></legend>
                                         <div class="row form-group">
                                             <div class="col-xs-6 col-sm-3">
-                                                <label for="cars-per-day">Cars per day</label>
-                                                <input id="cars-per-day" type="number" class="form-control" placeholder="cars">
+                                                <label for="cars">Cars</label>
+                                                <input id="cars" type="number" class="form-control" placeholder="cars">
                                             </div>
                                             <div class="col-xs-6 col-sm-3">
-                                                <label for="buses">Buses per day</label>
+                                                <label for="buses">Buses</label>
                                                 <input id="buses" type="number" class="form-control" placeholder="buses">
                                             </div>
+                                        </div>
+                                        <div class="row form-group">
                                             <div class="col-xs-6 col-sm-3">
-                                                <label for="small-trucks-per-day">Small trucks per day</label>
-                                                <input id="small-trucks-per-day" type="number" class="form-control" placeholder="small trucks">
+                                                <label for="small-trucks">Small trucks</label>
+                                                <input id="small-trucks" type="number" class="form-control" placeholder="small trucks">
                                             </div>
                                             <div class="col-xs-6 col-sm-3">
-                                                <label for="large-trucks-per-day">Large trucks per day</label>
-                                                <input id="large-trucks-per-day" type="number" class="form-control" placeholder="large trucks">
+                                                <label for="large-trucks">Large trucks</label>
+                                                <input id="large-trucks" type="number" class="form-control" placeholder="large trucks">
                                             </div>
                                         </div>
                                         <div class="row form-group">
@@ -82,16 +87,6 @@
                                             <div class="col-xs-6 col-sm-3">
                                                 <label for="pedestrians">Pedestrians</label>
                                                 <input id="pedestrians" type="number" class="form-control" placeholder="pedestrians">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col-xs-6">
-                                                <label for="min-speed">Minimum speed</label>
-                                                <input id="min-speed" type="number" class="form-control" placeholder="minimum">
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <label for="max-speed">Maximum speed</label>
-                                                <input id="max-speed" type="number" class="form-control" placeholder="maximum">
                                             </div>
                                         </div>
                                     </fieldset>
