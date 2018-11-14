@@ -13,6 +13,9 @@ legend {
 .container.content {
     margin-top: 35px;
 }
+.text * {
+    vertical-align: middle;
+}
 .panel {
     background-color:transparent;
 }
