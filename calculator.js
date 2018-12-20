@@ -12,14 +12,14 @@ $("#go").on("click", function () {
         var value, attr, proposed = false;
         for( i = 0; i < l; i++ ) {
             label = $(labels[i]);
-            attr = label.attr('data-proposed');
+            attr = label.attr("data-proposed");
             value = $("#" + label.attr("for")).val().trim();
             if( value !== "" ) {
                 if( typeof attr !== "undefined" && attr !== false && attr !== null && proposed === false ) {
                     result += "\nProposed\n--------\n";
                     proposed = true;
                 }
-                result += label.text() + ": "
+                result += label.text() + ": ";
                 if( isNaN(value) ) {
                     result += "Invalid data submitted, ignored";
                 } else {
@@ -44,7 +44,7 @@ $("#go").on("click", function () {
                     "You should probably plan for a bike lane anyway";
         }
         $("#loading").removeClass("calculating");
-        $("#data-entry").collapse('hide');
+        $("#data-entry").collapse("hide");
         $("#calculations").text(result);
         $("#results-display").collapse("show");
     }, calculatorDuration);

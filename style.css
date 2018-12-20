@@ -83,3 +83,7 @@ legend {
     text-shadow: 3px 3px 3px #000;
     font-family: "Stardos Stencil","Courier",serif;
 }
+.modal-title,
+#link-to-engineering {
+    color: #000;
+}

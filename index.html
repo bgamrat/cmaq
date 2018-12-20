@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>CMAQ* Calculator</title>
+        <title>Lane Addition Calculator*</title>
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="style.css">
@@ -23,16 +23,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">CMAQ* Calculator</a>
+                    <a class="navbar-brand" href="#">Lane Addition Calculator*</a>
                 </div>
             </div>
         </div>
         <div id="loading"></div>
         <div class="container content" role="main">
             <div id="calculator" class="page-header">
-                <h1>CMAQ* Calculator</h1>
+                <h1>Lane Addition Calculator*</h1>
                 <p class="text">For computing* emissions reductions of lane addition projects&nbsp;
-		<a href="https://twitter.com/intent/tweet?text=CMAQ+calculator&via=wirehopper" class="twitter-share-button" data-size="large" data-show-count="false"></a></p>
+                    <a href="https://twitter.com/intent/tweet?text=CMAQ+calculator&via=wirehopper" class="twitter-share-button" data-size="large" data-show-count="false"></a></p>
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="data-entry-heading">
@@ -126,30 +126,87 @@
                             </div>
                         </div>
                     </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="request-heading">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#request" aria-expanded="true" aria-controls="request">
+                                    Hudson NH Request Form
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="request" class="panel-collapse collapse" role="tabpanel" aria-labelledby="request-heading">
+                            <div class="panel-body">
+                                <form>
+                                    <fieldset>
+                                        <legend>Request Crosswalk</legend>
+                                        <div class="row form-group">
+                                            <div class="col-xs-12">
+                                                <label for="email">Email</label>
+                                                <input id="email" type="email" class="form-control" placeholder="email">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-xs-12">
+                                                <label for="location">Location</label>
+                                                <textarea id="location" class="form-control" placeholder="location"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="justify">
+                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal">
+                                                Submit
+                                            </button>
+                                            <button type="reset" class="btn btn-default">Reset</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="bike-lane" class="hidden">Bike Lane</div>
             <div id="bike" class="hidden"></div>
+            <div class="modal fade" id="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Thank you!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p id="link-to-engineering">
+                                Thank you for your interest in improving safety for Hudson, NH bicyclists, pedestrians
+                                and all other non-motorists. Please click this link <a href="http://www.hudsonnh.gov/departments/engineering" target="_blank">Tonw of Hudson NH - Engineering</a> to
+                                contact the <em>Town Engineer</em>.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<script>
-window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
+        <script>
+            window.twttr = (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                if (d.getElementById(id))
+                    return t;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
+                t._e = [];
+                t.ready = function (f) {
+                    t._e.push(f);
+                };
 
-  return t;
-}(document, "script", "twitter-wjs"));
+                return t;
+            }(document, "script", "twitter-wjs"));
         </script>
         <script src="calculator.js"></script>
     </body>
